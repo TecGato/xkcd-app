@@ -43,7 +43,7 @@ export default function Comic({
 }
 
 export async function getStaticPaths({ locales }) {
-  const files = await fs.readdir('../comics');
+  const files = await fs.readdir('./comics');
   let paths = [];
 
   locales.forEach((locale) => {
@@ -62,7 +62,7 @@ export async function getStaticPaths({ locales }) {
 
 export async function getStaticProps({ params }) {
   const { id } = params;
-  const content = await readFile(`../comics/${id}.json`, 'utf8');
+  const content = await readFile(`./comics/${id}.json`, 'utf8');
   const comic = JSON.parse(content);
 
   const idNumber = +id;
@@ -70,8 +70,8 @@ export async function getStaticProps({ params }) {
   const nextId = idNumber + 1;
 
   const [prevResult, nextResult] = await Promise.allSettled([
-    stat(`../../../comics/${prevId}.json`),
-    stat(`../../../comics/${nextId}.json`),
+    stat(`./comics/${prevId}.json`),
+    stat(`./comics/${nextId}.json`),
   ]);
 
   const hasPrevious = prevResult.status === 'fulfilled';
