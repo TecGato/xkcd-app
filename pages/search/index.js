@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { search } from '../services/search';
+import { search } from '../../services/search';
 import { Layout } from '@/components/Layout';
 import { useI18n } from '@/context/i18n';
 

@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { search } from '../services/search';
+import { search } from '../../services/search';
 
 export default async function handler(req, res) {
   const {

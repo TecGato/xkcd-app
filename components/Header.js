@@ -65,7 +65,7 @@ export function Header() {
                       return (
                         <li key={result.id} className='m-0'>
                           <Link
-                            href={`/pages/comic/${result.id}`}
+                            href={`/comic/${result.id}`}
                             className='text-sm font-semibold hover:bg-slate-200 block px-2 py-1'
                           >
                             {result.title}
