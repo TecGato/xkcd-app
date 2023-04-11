@@ -62,7 +62,7 @@ export async function getStaticPaths({ locales }) {
 
 export async function getStaticProps({ params }) {
   const { id } = params;
-  const content = await readFile(`../../../comics/${id}.json`, 'utf8');
+  const content = await readFile(`../comics/${id}.json`, 'utf8');
   const comic = JSON.parse(content);
 
   const idNumber = +id;

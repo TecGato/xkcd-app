@@ -52,7 +52,7 @@ export async function getStaticProps(context) {
   const files = await fs.readdir('../comics');
   const lastesComicsFiles = files.slice(-8, files.length);
   const promisesReadFiles = lastesComicsFiles.map(async (file) => {
-    const content = await fs.readFile(`../../comics/${file}`, 'utf8');
+    const content = await fs.readFile(`../comics/${file}`, 'utf8');
     return JSON.parse(content);
   });
   const lastestComics = await Promise.all(promisesReadFiles);
